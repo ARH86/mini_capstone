@@ -1,6 +1,3 @@
 class ApplicationController < ActionController::Base
-  def all_products_action
-    @products = Product.all
-    render 'all_products_view.json.jbuilder'
-  end
+  protect_from_forgery with: :null_session
 end
