@@ -1,15 +1,16 @@
 class Api::ProductsController < ApplicationController
   def index
-    @products = Product.all
-
-    search_term = params[:search]
-    if search_term
-      @products = @products.where(
-                                  "name iLIKE ?", "%#{search_term}%")
-    end
-
     sort_attribute = params[:sort_by]
     sort_order = params[:sort_order]
+    search_term = params[:search]
+
+     @products = Product.all
+
+    if search_term
+      @products = @products.where("name iLIKE ?", "%#{search_term}%")
+    end
+
+    
 
     if sort_attribute && sort_order
       @products = @products.order(sort_attribute => sort_order)
@@ -29,7 +30,6 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
                            name: params[:name],
                            price: params[:price],
-                           image_url: params[:image_url],
                            description: params[:description]
                            )
     if @product.save
@@ -44,7 +44,6 @@ class Api::ProductsController < ApplicationController
 
     @product.name = params[:name] || @product.name
     @product.price = params[:price] || @product.price
-    @product.image_url = params[:image_url] || @product.image_url
     @product.description = params[:description] || @product.description
     @product.save
 
