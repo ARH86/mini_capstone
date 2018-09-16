@@ -5,7 +5,7 @@ json.tax product.tax
 json.total product.total
 json.discounted product.is_discounted?
 
-json.current_user product.current_user
+json.current_user current_user
 
 json.images do
   json.array! product.images, partial: 'api/images/image', as: :image
