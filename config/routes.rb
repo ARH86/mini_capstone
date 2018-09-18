@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
   namespace :api do
 
+    post '/carted_products' => 'carted_products#create'
+    get '/carted_products' => 'carted_products#index'
+    patch '/carted_products' => 'carted_product#update'
+
     post '/orders' => 'orders#create'
     get '/orders' => 'orders#index'
 

@@ -17,3 +17,5 @@ end
 json.product do
   json.partial! order.product, partial: 'api/products/product', as: :product
 end
+
+json.carted_product @carted_product
