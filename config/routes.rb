@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
   namespace :api do
 
-    post '/carted_products' => 'carted_products#create'
     get '/carted_products' => 'carted_products#index'
+    post '/carted_products' => 'carted_products#create'
     patch '/carted_products' => 'carted_product#update'
+    delete '/carted_products/:id' => 'carted_products#destroy'
 
     post '/orders' => 'orders#create'
     get '/orders' => 'orders#index'

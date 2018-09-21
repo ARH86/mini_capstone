@@ -1,1 +1,1 @@
-json.carted_product @carted_product.json 
+json.array! @carted_products, partial: 'carted_product', as: :carted_product
