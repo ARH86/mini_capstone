@@ -1,4 +1,5 @@
-
+json.id order.id
+json.user_email order.user.email
 json.subtotal order.subtotal
 json.tax order.tax
 json.total order.total
@@ -14,4 +15,3 @@ json.product do
   json.array! order.products, partial: 'api/products/product', as: :product
 end
 
-json.carted_product @carted_product

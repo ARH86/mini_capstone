@@ -10,12 +10,7 @@ class Order < ApplicationRecord
 
 
   def calculate_subtotal
-    sum = 0
-    cart.each do |carted_product|
-      sum += carted_product.subtotal 
-    end
-
-    self.subtotal = sum
+     self.subtotal = carted_products.sum { |carted_product| carted_product.subtotal }
   end
 
   def calculate_tax
@@ -27,6 +22,7 @@ class Order < ApplicationRecord
   end
 
   def build_totals
+    attach_cart
     calculate_subtotal
     calculate_tax
     calculate_total

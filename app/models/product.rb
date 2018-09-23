@@ -30,5 +30,4 @@ class Product < ApplicationRecord
   def total
    price + tax 
   end
-
 end
