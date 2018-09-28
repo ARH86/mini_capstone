@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-  before_action :authenticate_admin, except: [:index, :show]
+  # before_action :authenticate_admin, except: [:index, :show]
 
   def index
     sort_attribute = params[:sort_by]
@@ -38,7 +38,8 @@ class Api::ProductsController < ApplicationController
       @product = Product.new(
                              name: params[:name],
                             price: params[:price],
-                            description: params[:description]
+                            description: params[:description],
+                            supplier_id: params[:supplier_id]
                             )
      if @product.save
       render 'show.json.jbuilder'
@@ -69,5 +70,4 @@ class Api::ProductsController < ApplicationController
 
     render json: {message: "Product destroyed successfully"}
   end
- 
 end
