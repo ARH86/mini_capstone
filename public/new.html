@@ -11,7 +11,28 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class='container'>
+      <h1>Create a new product</h1>
+        <form action="/products" method="post">
+          <div>
+             Name: <input type="text" name="name">
+          </div>
+           <div>
+             Price: <input type="decimal" name="price">
+          </div>
+           <div>
+             Description: <input type="text" name="description">
+           </div>        
+           <div>
+             Supplier ID: <input type=integer name="supplier_id">
+           </div>
+            <div>
+              Image URL: <input type="text" name="image_url">
+           </div>
+
+           <input type="submit" value="Create Product">
+             </form>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

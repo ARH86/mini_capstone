@@ -14,7 +14,26 @@
     <div class="container">
     <h1>Edit a product</h1>
 
-    <form action="/product/2"></form>
+    <form action="/product/2">
+     <div>
+            Name: <input type="text" name="name" value="Philips CDI">
+          </div>
+          <div>
+            Price: <input type="decimal" name="price" value="350">
+          </div>
+          <div>
+            Description: <input type="text" name="description" value="Interactive multimedia game console">
+          </div> 
+          <div>
+            Supplier ID: <input type="integer" name="supplier_id" value=2
+          </div>      
+          <div>
+            Image URL: <input type="text" name="image_url" value="http://insidermedia.ign.com/insider/image/cdiplayer_facesofevil.jpg">
+          </div>
+
+          <input type="submit" value="Update Product">
+
+    </form>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
